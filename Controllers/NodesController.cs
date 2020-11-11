@@ -18,7 +18,7 @@ namespace NodesApi.Controllers
 
         SqliteConnection sqlite_conn = new SqliteConnection("Data Source=NodesDB.sqlite;");
 
-
+        
         [HttpGet]
         public IEnumerable<Node> ListAllNodes()
         {
@@ -98,7 +98,7 @@ namespace NodesApi.Controllers
                     // Random r = new Random();
                     // int randomNodeId = r.Next(0, 1000);
                     sqlite_cmd.CommandText = "INSERT INTO nodes (nodeName) VALUES(@nodeName)";
-                        //sqlite_cmd.Parameters.AddWithValue("@nodeId", randomNodeId);
+                        // sqlite_cmd.Parameters.AddWithValue("@nodeId", randomNodeId);
                         sqlite_cmd.Parameters.AddWithValue("@nodeName", value.NodeName);
                         sqlite_cmd.ExecuteNonQuery();
                         sqlite_conn.Close();

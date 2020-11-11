@@ -33,3 +33,9 @@ insert into nodes select * from nodes_old;
 
 COMMIT;
 PRAGMA foreign_keys=on;
+
+drop table nodepairs_old
+drop table nodes_old
+
+DELETE from nodes where nodeId = 'NULL'
+

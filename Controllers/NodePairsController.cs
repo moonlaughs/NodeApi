@@ -99,7 +99,7 @@ namespace NodesApi.Controllers
                     sqlite_conn.Open();
                     SqliteCommand sqlite_cmd;
                     sqlite_cmd = sqlite_conn.CreateCommand();
-                    sqlite_cmd.CommandText = "INSERT INTO `nodePairs` (parentNodeId, childNodeId) VALUES (@parentNodeId, @childNodeId);";
+                    sqlite_cmd.CommandText = "INSERT INTO nodePairs (parentNodeId, childNodeId) VALUES (@parentNodeId, @childNodeId);";
                         sqlite_cmd.Parameters.AddWithValue("@parentNodeId", value.ParentId);
                         sqlite_cmd.Parameters.AddWithValue("@childNodeId", value.ChildId);
                         int rowAffected = sqlite_cmd.ExecuteNonQuery();
